@@ -11,19 +11,8 @@ class Pushswap
     {
         array_shift($argv);
         $this->la = $argv;
-
-        foreach ($this->la as $key => $value) {
-            if ($key == 0) {
-                $this->max = $value;
-                $this->min = $value;
-            }
-            if ($this->max < $value) {
-                $this->max = $value;
-            }
-            if ($this->min > $value) {
-                $this->min = $value;
-            }
-        }
+        $this->max = max($argv);
+        $this->min = min($argv);
     }
 
     function ready()
@@ -32,7 +21,11 @@ class Pushswap
             echo "\n";
             return;
         }
-
+        if (is_dir("./Bonus")) {
+            echo "[la] => " . implode(" ", $this->la) . "\t\t";
+            echo "[lb] => " . implode(" ", $this->lb) . "\n";
+            usleep(500000);
+        }
         if ($this->bool == false) {
             $tableau = $this->la;
         } else {
@@ -113,6 +106,7 @@ class Pushswap
 
     function sb()
     {
+
         array_push($this->arr_function, "sb");
         list($this->lb[0], $this->lb[1]) = array($this->lb[1], $this->lb[0]);
         $this->ready();
@@ -130,7 +124,6 @@ class Pushswap
     function pa($key_1)
     {
         for ($i = 0; $key_1 >= $i; $i++) {
-            // echo "pa ";
             array_push($this->arr_function, "pa");
             array_unshift($this->la, array_shift($this->lb));
         }
