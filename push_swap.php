@@ -34,6 +34,10 @@ class Pushswap
         foreach ($tableau as $key => $value) {
 
             if ($key > 0 && $this->bool == false) {
+                if($this->la[array_key_last($this->la)] == min($this->la) && $this->la[0] !== $this->la[array_key_last($this->la)]) {
+                    $this->rra();
+                    return;
+                }
                 if ($this->max == $this->la[0]) {
                     $this->ra();
                     return;
@@ -94,7 +98,7 @@ class Pushswap
             include "./Bonus/danse.php";
             return;
         }
-        echo implode(" ",  $this->arr_function) . "\n";
+        echo implode(" ",  $this->arr_function) . "\n";        
     }
 
     function sa()
