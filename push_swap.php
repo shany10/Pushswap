@@ -21,11 +21,11 @@ class Pushswap
             echo "\n";
             return;
         }
-        if (is_dir("./Bonus")) {
-            echo "[la] => " . implode(" ", $this->la) . "\t\t";
-            echo "[lb] => " . implode(" ", $this->lb) . "\n";
-            usleep(500000);
-        }
+        // if (is_dir("./Bonus")) {
+        //     echo "[la] => " . implode(" ", $this->la) . "\t\t";
+        //     echo "[lb] => " . implode(" ", $this->lb) . "\n";
+        //     usleep(500000);
+        // }
         if ($this->bool == false) {
             $tableau = $this->la;
         } else {
@@ -92,12 +92,12 @@ class Pushswap
             }
         }
 
-        if (is_dir("./Bonus")) {
-            include "./Bonus/color.php";
-            usleep(500000);
-            include "./Bonus/danse.php";
-            return;
-        }
+        // if (is_dir("./Bonus")) {
+        //     include "./Bonus/color.php";
+        //     usleep(500000);
+        //     include "./Bonus/danse.php";
+        //     return;
+        // }
         echo implode(" ",  $this->arr_function) . "\n";        
     }
 
