@@ -18,6 +18,7 @@ class Pushswap
     function ready()
     {
         if (count($this->la) <= 1 && count($this->lb) == 0 || $this->max == $this->min) {
+            var_dump($this->la);
             echo "\n";
             return;
         }
@@ -92,12 +93,12 @@ class Pushswap
             }
         }
 
-        // if (is_dir("./Bonus")) {
-        //     include "./Bonus/color.php";
-        //     usleep(500000);
-        //     include "./Bonus/danse.php";
-        //     return;
-        // }
+        if (is_dir("./Bonus")) {
+            include "./Bonus/color.php";
+            usleep(500000);
+            include "./Bonus/danse.php";
+            return;
+        }
         echo implode(" ",  $this->arr_function) . "\n";        
     }
 
